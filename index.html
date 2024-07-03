@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+
+    <div class="wrapper w-[100vw] h-[100vh] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 flex flex-col justify-center items-center gap-10">
+
+        <p class="player-container w-[200px] text-center font-[500] rounded-md border-2 select-none bg-gradient-to-r from-indigo-500 px-5 py-3 font-bold text-white"></p>
+
+        <div class="game-container w-[20%] grid grid-rows-3 grid-cols-3 aspect-square">
+            <div class="box box1 border-r-4 border-b-4"></div>
+            <div class="box box2 border-r-4 border-b-4"></div>
+            <div class="box box3 border-b-4"></div>
+            <div class="box box4 border-r-4 border-b-4"></div>
+            <div class="box box5 border-r-4 border-b-4"></div>
+            <div class="box box6 border-b-4"></div>
+            <div class="box box7 border-r-4 "></div>
+            <div class="box box8 border-r-4"></div>
+            <div class="box box9"></div>
+        </div>
+
+        <button class="reset-btn w-[200px]  border-2 px-5 py-3 rounded-md bg-gradient-to-r from-indigo-500 font-[500] text-white font-bold hover:scale-110 transition-all duration-200">Reset Game</button>
+
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>

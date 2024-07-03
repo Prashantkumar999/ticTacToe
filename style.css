@@ -1,0 +1,32 @@
+.box {
+    border-color: black;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
+}
+
+.player-container.active {
+    visibility: visible;
+}
+
+.reset-btn.active {
+    visibility: visible;
+}
+
+.greenBackground {
+    background-color: #38e29b;
+}
+
+.reset-btn{
+    visibility: hidden;
+}
+
+@media (max-width: 500px){
+    .game-container{
+        width: 70%;
+    }
+}
