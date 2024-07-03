@@ -2,17 +2,18 @@ const boxes = document.querySelectorAll(".box");
 const infoBtn = document.querySelector(".player-container");
 const resetBtn = document.querySelector(".reset-btn");
 
-
 console.log(boxes);
 
 let currentPlayer;
 let gameGrid;
 let gameEnd = false;
+
 init();
 
 function init() {
     currentPlayer = "X";
     gameGrid = ["", "", "", "", "", "", "", "", ""];
+    gameEnd = false; // Reset the game end flag
 
     boxes.forEach((box) => {
         box.textContent = "";
@@ -25,14 +26,13 @@ function init() {
 
     infoBtn.classList.add("active");
     infoBtn.innerHTML = `Current Player: ${currentPlayer}`;
-
 }
+
 function handleClick(index) {
     if (gameGrid[index] === "") {
         gameGrid[index] = currentPlayer;
         boxes[index].innerHTML = currentPlayer;
-        gameGrid[index] = currentPlayer;
-        chnageCurrentPlayer();
+        changeCurrentPlayer(); // Fixed function name
         checkForWinner();
         if (!gameEnd) {
             checkForDraw();
@@ -42,20 +42,19 @@ function handleClick(index) {
 
 function checkForDraw() {
     for (let i = 0; i < gameGrid.length; i++) {
-        if (gameGrid[i] === "")
-            return false;
+        if (gameGrid[i] === "") return false;
     }
     boxes.forEach((box) => {
         box.style.pointerEvents = "none";
     });
-    infoBtn.innerHTML = "draw";
+    infoBtn.innerHTML = "Draw";
+    return true; // Return true when a draw is detected
 }
 
-function chnageCurrentPlayer() {
+function changeCurrentPlayer() { // Fixed function name
     if (currentPlayer === "X") {
         currentPlayer = "O";
-    }
-    else {
+    } else {
         currentPlayer = "X";
     }
     infoBtn.innerHTML = `Current Player: ${currentPlayer}`;
@@ -79,7 +78,6 @@ function checkForWinner() {
             boxes[combo[2]].classList.add("greenBackground");
             gameEnd = true;
         }
-
     });
 }
 console.log(gameGrid);
@@ -91,7 +89,8 @@ boxes.forEach((box, index) => {
             resetBtn.classList.add("active");
         }
     });
-})
+});
+
 const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
