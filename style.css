@@ -25,8 +25,18 @@
     visibility: hidden;
 }
 
-@media (max-width: 500px){
-    .game-container{
+@media (max-width:600px) {
+    .game-container {
         width: 70%;
+        font-size: medium;
+        height: 70%;
+    }
+
+    .player-container {
+        margin-top: 1rem;
+    }
+
+    .reset-btn {
+        margin-bottom: 1rem;
     }
 }
